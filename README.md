@@ -5,28 +5,26 @@ Implementar uma aplicação client-side, que consulte a API do GitHub e mostre o
 
 **API**: [https://developer.github.com/v3/](https://developer.github.com/v3/)
 
-### **Requisitos** ###
-
-* Eu, como usuário, desejo buscar por um usuário do GitHub;
-* Eu, como usuário, desejo ver os detalhes desse usuário que foi buscado (número de seguidores, número de seguidos, imagem do avatar, e-mail e bio);
-* Eu, como usuário, desejo ver a listagem dos repositórios desse usuário que foi buscado, ordenados pelo número decrescente de estrelas;
-* Eu, como usuário, desejo poder alterar a ordem da listagem de repositórios;
-* Eu, como usuário, desejo ver uma página com os detalhes de um repositório (nome, descrição, ,número de estrelas, linguagem e um link externo para a página do repositório no GitHub), que pode ser clicado na listagem dos repositórios;
-
-### **Definição de Pronto** ###
-
-* O layout deve ser responsivo para dispositivos com a resolução no mínimo de 320 x 480;
-* O layout deve seguir padrões Bootstrap.
-* Tudo bem, até pode usar jquery. Se você não quiser usar (bônus, preferimos Fetch API)
+### **Requisitos técnicos** ###
+* **Não utilizar frameworks** React, Vue, Angular, etc.
 * É obrigatório o uso de rotas.
-* Não utilizar frameworks.
+* Pode usar jquery, porém **Fetch API** é mais legal.
+* O layout deve ser responsivo, seguindo os padrões Bootstrap.
+
+### **Requisitos de negócio** ###
+
+* Eu, como usuário, desejo **buscar** por um usuário do GitHub;
+* Eu, como usuário, desejo **ver os detalhes do usuário** buscado (número de seguidores, número de seguidos, imagem do avatar, e-mail e bio);
+* Eu, como usuário, desejo **ver a listagem dos repositórios** desse usuário que foi buscado, ordenados pelo número decrescente de estrelas;
+* Eu, como usuário, desejo poder **alterar a ordem da listagem** de repositórios;
+* Eu, como usuário, desejo ver uma **página com os detalhes** de um repositório (nome, descrição, ,número de estrelas, linguagem e um link externo para a página do repositório no GitHub), que pode ser clicado na listagem dos repositórios;
 
 ### **Critérios de Avaliação** ###
 
-* Organização do projeto: Avalia a estrutura do projeto, documentação e uso de controle de versão;
-* Inovação tecnológica: Avalia o uso de tecnologias mais recentes, desde que estáveis;
-* Coerência: Avalia se os requisitos foram atendidos;
-* Boas práticas: Avalia se o projeto segue boas práticas de desenvolvimento, incluindo segurança e otimização;
+* **Organização do projeto**: Avalia a estrutura do projeto, documentação e uso de controle de versão;
+* **Inovação tecnológica**: Avalia o uso de tecnologias mais recentes, como novas características ES6 da linguagem;
+* **Coerência**: Avalia se os requisitos foram atendidos;
+* **Boas práticas**: Avalia se o projeto segue boas práticas de desenvolvimento, incluindo segurança e otimização;
 
 
 ### **Observação** ###
@@ -39,7 +37,9 @@ As APIs a serem consumidas são:
 
 ### **Processo de submissão** ###
 
-O desafio deve ser entregue pelo [GitHub](http://github.com/). A aplicação deve estar hospedada (bônus) ([Heroku](https://www.heroku.com/), [Firebase](https://www.firebase.com/), [Plunker](https://plnkr.co/), [Surge](http://surge.sh/), etc) As URLs deve ser enviada por email.
+O desafio deve ser entregue pelo [GitHub](http://github.com/), com README de instalação, start do projeto e visualização da demo.
+
+A aplicação deve estar hospedada (bônus) ([Heroku](https://www.heroku.com/), [Firebase](https://www.firebase.com/), [Plunker](https://plnkr.co/), [Surge](http://surge.sh/), etc) As URLs deve ser enviada por email.
 
 Qualquer dúvida em relação ao desafio, responderemos por e-mail.
 
