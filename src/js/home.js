@@ -1,5 +1,6 @@
 const handleHTML = html => {
   const template = Handlebars.compile(html)();
+  $("#view").empty();
   $("#view").append(template);
 
   $("#searchForm").submit(e => {
