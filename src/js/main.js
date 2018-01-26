@@ -17,4 +17,8 @@ $(() => {
   const router = Router(routes);
 
   router.init();
+
+  if (!location.hash) {
+    location.hash = "#/";
+  }
 });
