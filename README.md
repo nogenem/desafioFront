@@ -1,3 +1,27 @@
+# Versão final do desafio
+
+### Imagens
+
+Clique [aqui](https://imgur.com/a/yReGY) para ver algumas imagens do site.
+
+### Pré-requisitos
+
+* [NodeJS 8.9.1](https://nodejs.org/en/)
+
+### Setup
+
+```shell
+git clone https://github.com/nogenem/desafioFront
+cd desafioFront
+npm install
+```
+
+### Inicializar projeto
+
+```shell
+npm run gulp
+```
+
 # Desafio Front-End da Desbravador Software
 
 **Proposta:**  
