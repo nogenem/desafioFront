@@ -11,5 +11,3 @@ const RepoHandler = (user, repo) => {
     fetch(`https://api.github.com/repos/${fullName}`).then(resp => resp.json())
   ]).then(handleResponses);
 };
-
-window.RepoHandler = RepoHandler;

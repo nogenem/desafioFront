@@ -37,5 +37,3 @@ const UserHandler = user => {
     fetch(`https://api.github.com/users/${user}`).then(resp => resp.json())
   ]).then(handleCardResponses);
 };
-
-window.UserHandler = UserHandler;

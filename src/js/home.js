@@ -16,5 +16,3 @@ const HomeHandler = () => {
     .then(resp => resp.text())
     .then(handleHTML);
 };
-
-window.HomeHandler = HomeHandler;
