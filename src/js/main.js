@@ -10,7 +10,8 @@ $.sanitize = input => {
 $(() => {
   const routes = {
     "/": HomeHandler,
-    "/user/:user": UserHandler
+    "/user/:user": UserHandler,
+    "/user/:user/:repo": RepoHandler
   };
 
   const router = Router(routes);
