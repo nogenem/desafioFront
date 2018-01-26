@@ -16,3 +16,7 @@ body,
 #reposTable {
   margin-top: 15px;
 }
+
+#reposTable tr {
+  cursor: pointer;
+}
