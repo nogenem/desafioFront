@@ -1,13 +1,15 @@
-const handleRepoResponses = ([html, repoData]) => {
-  const template = Handlebars.compile(html)(repoData);
+import { handleErrors, myFetch } from "../utils";
+
+const handleRepoResponses = ([repoTpl, repoData]) => {
+  const template = repoTpl(repoData);
   $("#view").empty();
   $("#view").append(template);
 };
 
-const RepoHandler = (user, repo) => {
+export default (user, repo) => {
   const fullName = `${user}/${repo}`;
   Promise.all([
-    myFetch("tpl/repo.html").then(resp => resp.text()),
+    import("../../tpl/repo.hbs"),
     myFetch(`https://api.github.com/repos/${fullName}`).then(resp =>
       resp.json()
     )
