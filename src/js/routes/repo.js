@@ -1,19 +1,16 @@
 import { handleErrors, myFetch } from "../utils";
 
-const handleRepoResponses = ([repoTpl, repoData]) => {
-  const template = repoTpl(repoData);
-  $("#view").empty();
-  $("#view").append(template);
+import renderer from "../utils/renderer";
+import UserRepo from "../components/UserRepo";
+
+const handleRepoResponse = repoData => {
+  renderer.render(UserRepo, repoData);
 };
 
 export default (user, repo) => {
   const fullName = `${user}/${repo}`;
-  Promise.all([
-    import("../../tpl/repo.hbs"),
-    myFetch(`https://api.github.com/repos/${fullName}`).then(resp =>
-      resp.json()
-    )
-  ])
-    .then(handleRepoResponses)
+  myFetch(`https://api.github.com/repos/${fullName}`)
+    .then(resp => resp.json())
+    .then(handleRepoResponse)
     .catch(handleErrors);
 };
