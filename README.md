@@ -19,7 +19,7 @@ npm install
 ### Inicializar projeto
 
 ```shell
-npm run gulp
+npm start
 ```
 
 # Desafio Front-End da Desbravador Software
