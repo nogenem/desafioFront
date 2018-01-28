@@ -1,15 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   entry: ["./src/js/index.js", "./src/_scss/main.scss"],
   output: {
-    filename: "js/index.js",
-    path: path.join(__dirname, "./build/")
+    filename: "js/index.bundle.js",
+    path: path.join(__dirname, "./dist/")
   },
   devServer: {
-    contentBase: "./build"
+    contentBase: "./dist"
   },
   module: {
     rules: [
@@ -44,15 +45,6 @@ module.exports = {
             { loader: "sass-loader" }
           ]
         })
-      },
-      {
-        test: /\.js$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["env", "stage-2"]
-          }
-        }
       }
     ]
   },
@@ -63,6 +55,12 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: "css/main.css"
+    }),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        ie8: false,
+        ecma: 8
+      }
     })
   ]
 };
