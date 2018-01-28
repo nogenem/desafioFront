@@ -18,10 +18,6 @@ module.exports = {
         use: [{ loader: "html-loader", options: { minimize: true } }]
       },
       {
-        test: /\.hbs$/,
-        loader: "handlebars-loader"
-      },
-      {
         test: /\.(otf|eot|ttf|woff|svg|png|jpe?g)/i,
         use: [
           {
