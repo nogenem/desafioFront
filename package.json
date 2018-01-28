@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta.2",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
