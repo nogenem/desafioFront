@@ -1,0 +1,20 @@
+<table id="reposTable" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Stars</th>
+      <th>Forks</th>
+      <th>Problemas Abertos</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#repos}}
+    <tr data-fullname="{{full_name}}">
+      <td>{{name}}</td>
+      <td>{{stargazers_count}}</td>
+      <td>{{forks_count}}</td>
+      <td>{{open_issues}}</td>
+    </tr>
+    {{/repos}} 
+  </tbody>
+</table>

@@ -1,0 +1,27 @@
+html,
+body,
+#view,
+#searchContainer,
+#repoCard {
+  height: 100%;
+}
+
+#userCard {
+  margin-top: 15px;
+}
+
+#userCard .card-body {
+  padding: 10px;
+}
+
+#reposTable {
+  margin-top: 15px;
+}
+
+#reposTable tr {
+  cursor: pointer;
+}
+
+#errorAlert {
+  margin-top: 15px;
+}
