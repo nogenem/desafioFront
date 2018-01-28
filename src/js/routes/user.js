@@ -1,43 +1,26 @@
 import { handleErrors, myFetch } from "../utils";
 
-const handleReposResponses = ([reposTpl, reposData]) => {
-  const template = reposTpl({ repos: reposData });
+import renderer from "../utils/renderer";
+import UserCard from "../components/UserCard";
+import UserReposList from "../components/UserReposList";
 
-  $("#view").append(template);
-  $("#reposTable").DataTable({
-    order: [[1, "desc"]]
-  });
-  document.querySelector("#reposTable tbody").addEventListener(
-    "click",
-    e => {
-      e.preventDefault();
-
-      const { fullname, user } = e.srcElement.parentElement.dataset;
-      location.hash = `#/user/${fullname}`;
-    },
-    false
-  );
+const handleReposResponse = reposData => {
+  renderer.append(UserReposList, reposData);
 };
 
-const handleUserResponses = ([userTpl, userData]) => {
-  const template = userTpl(userData);
-  $("#view").empty();
-  $("#view").append(template);
+const handleUserResponse = userData => {
+  renderer.render(UserCard, userData);
 
   const repos = userData.repos_url;
-  Promise.all([
-    import("../../tpl/userReposList.hbs"),
-    myFetch(repos).then(resp => resp.json())
-  ])
-    .then(handleReposResponses)
+  myFetch(repos)
+    .then(resp => resp.json())
+    .then(handleReposResponse)
     .catch(handleErrors);
 };
 
 export default user => {
-  Promise.all([
-    import("../../tpl/userCard.hbs"),
-    myFetch(`https://api.github.com/users/${user}`).then(resp => resp.json())
-  ])
-    .then(handleUserResponses)
+  myFetch(`https://api.github.com/users/${user}`)
+    .then(resp => resp.json())
+    .then(handleUserResponse)
     .catch(handleErrors);
 };
