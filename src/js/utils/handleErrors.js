@@ -1,10 +1,5 @@
-const handleErrorsResponse = (errorTpl, errorMsg) => {
-  const template = errorTpl({
-    text: errorMsg
-  });
-  $("#view").empty();
-  $("#view").prepend(template);
-};
+import renderer from "./renderer";
+import ErrorMessage from "../components/ErrorMessage";
 
 export default err => {
   let msg = "";
@@ -21,5 +16,6 @@ export default err => {
       msg = "Erro desconhecido. Tente novamente mais tarde.";
       break;
   }
-  import("../../tpl/error.hbs").then(resp => handleErrorsResponse(resp, msg));
+  console.error(err);
+  renderer.render(ErrorMessage, msg);
 };
