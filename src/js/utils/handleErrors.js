@@ -12,6 +12,7 @@ export default err => {
       break;
     case 500:
       msg = "Erro no servidor. Tente novamente mais tarde.";
+      break;
     default:
       msg = "Erro desconhecido. Tente novamente mais tarde.";
       break;
