@@ -1,0 +1,39 @@
+import { sanitize } from "../utils";
+
+const renderSearchForm = () => `
+  <div id="searchContainer" class="row align-items-center justify-content-center">
+    <div class="col-12">
+      <div class="row align-items-center justify-content-center text-center">
+        <div class="col-6">
+          <img 
+            src="http://www.freepngimg.com/download/github/1-2-github-free-png-image.png" 
+            alt="Github logo" class="img-fluid">
+        </div>
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <form id="searchForm" class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6">
+          <div class="form-group input-group">
+            <input 
+              id="userSearchInput" 
+              type="search" 
+              class="form-control" 
+              placeholder="Usuário para busca..."
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+`;
+
+export default {
+  render: renderSearchForm,
+  didMount: () => {
+    $("#searchForm").submit(e => {
+      e.preventDefault();
+      const user = sanitize($("#searchForm input").val());
+
+      location.hash = `#/user/${user}`;
+    });
+  }
+};
